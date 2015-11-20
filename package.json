@@ -4,7 +4,7 @@
   "description": "crypto.subtle for node.js",
   "main": "src/main.js",
   "scripts": {
-    "install": "./install.sh",
+    //"install": "bash ./install.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -26,7 +26,8 @@
     "ecc-jsbn": "0.0.1",
     "node-forge": "^0.6.20",
     "polyfill-promise": "^4.0.1",
-    "sjcl": "^1.0.3"
+    "sjcl": "^1.0.3",
+    "ecc": "git+https://github.com/rynomad/ecc.git"
   },
   "devDependencies": {
     "chext": "0.0.1",
