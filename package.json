@@ -1,0 +1,63 @@
+{
+  "name": "subtle",
+  "version": "0.1.7",
+  "description": "crypto.subtle for node.js",
+  "main": "src/main.js",
+  "scripts": {
+    "install": "./install.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "crypto",
+    "crypto.subtle",
+    "async",
+    "promise"
+  ],
+  "browser": {
+    "./src/use_node.js": "./src/use_browser.js",
+    "node-forge": "./src/forgeless.js",
+    "./src/node/algorithms/shared/ecc.node.js": "./src/node/algorithms/shared/ecc.browser.js"
+  },
+  "author": {
+    "name": "Ryan Bennett"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "ecc-jsbn": "0.0.1",
+    "node-forge": "^0.6.20",
+    "polyfill-promise": "^4.0.1",
+    "sjcl": "^1.0.3"
+  },
+  "devDependencies": {
+    "chext": "0.0.1",
+    "glob": "^5.0.14",
+    "gulp": "^3.9.0",
+    "gulp-jsdoc": "^0.1.4",
+    "gulp-mocha": "^2.1.3",
+    "gulp-watch": "^4.3.2",
+    "plato": "^1.5.0"
+  },
+  "gitHead": "a1ad4e66ed2762dbf950254bf73375de8ffd9c9a",
+  "_id": "subtle@0.1.7",
+  "_shasum": "683ac442df7e1003927120896c0e604d1e569bf2",
+  "_from": "subtle@>=0.1.7 <0.2.0",
+  "_npmVersion": "2.11.2",
+  "_nodeVersion": "0.12.6",
+  "_npmUser": {
+    "name": "rynomad",
+    "email": "nomad.ry@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "rynomad",
+      "email": "nomad.ry@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "683ac442df7e1003927120896c0e604d1e569bf2",
+    "tarball": "http://registry.npmjs.org/subtle/-/subtle-0.1.7.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/subtle/-/subtle-0.1.7.tgz",
+  "readme": "ERROR: No README data found!"
+}
