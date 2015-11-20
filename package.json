@@ -25,8 +25,7 @@
     "ecc-jsbn": "0.0.1",
     "node-forge": "^0.6.20",
     "polyfill-promise": "^4.0.1",
-    "sjcl": "^1.0.3",
-    "ecc": "git+https://github.com/rynomad/ecc.git"
+    "sjcl": "^1.0.3"
   },
   "devDependencies": {
     "chext": "0.0.1",
