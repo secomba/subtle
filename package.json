@@ -25,7 +25,8 @@
     "ecc-jsbn": "0.0.1",
     "node-forge": "^0.6.38",
     "polyfill-promise": "^4.0.1",
-    "sjcl": "^1.0.3"
+    "sjcl": "^1.0.3",
+    "jshashes": "^1.0.5"
   },
   "devDependencies": {
     "chext": "0.0.1",
