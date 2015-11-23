@@ -26,7 +26,9 @@
     "node-forge": "^0.6.38",
     "polyfill-promise": "^4.0.1",
     "sjcl": "^1.0.3",
-    "jshashes": "^1.0.5"
+    "jshashes": "^1.0.5",
+    "pbkdf2-sha256": "^1.1.1",
+    "pbkdf2-sha512": "^1.1.0"
   },
   "devDependencies": {
     "chext": "0.0.1",
