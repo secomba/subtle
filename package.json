@@ -23,7 +23,7 @@
   "license": "MIT",
   "dependencies": {
     "ecc-jsbn": "0.0.1",
-    "node-forge": "^0.6.20",
+    "node-forge": "^0.6.38",
     "polyfill-promise": "^4.0.1",
     "sjcl": "^1.0.3"
   },
