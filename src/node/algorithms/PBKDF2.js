@@ -31,11 +31,11 @@ var PBKDF2 = {
         }
     },
 
-    createExporter(type, key) {
+    createExporter: function(type, key) {
         throw "not implemented";
     },
 
-    deriveBits(key, options, length) {
+    deriveBits: function(key, options, length) {
         var method = {"SHA-512": "sha512", "SHA-256": "sha256"}[options.hash.name];
 
         key = key.toString('utf8');
