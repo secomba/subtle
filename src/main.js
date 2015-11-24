@@ -36,9 +36,17 @@ function Bufferize (result){
 function makeRoutine(routine){
   return function(){
     var routineArgs = makeArgArray(arguments)
-    return Browser(routine, arguments).then(Bufferize).catch(function useJScrypto(er){
-      ////console.log("BROWSER FAILED",er, routineArgs)
-      return (typeof JS[routine] === "function") ? JS[routine].apply(JS[routine],routineArgs)
+    var webcryptoRoutineArgs = [];
+    for (var i = 0; i < arguments.length; i++) {
+        webcryptoRoutineArgs.push(arguments[i].webcryptoKey ? arguments[i].webcryptoKey : arguments[i]);
+    }
+    var jsRoutineArgs = routineArgs.map(function(it) {
+        return it.jsKey ? it.jsKey : it;
+    });
+
+    return Browser(routine, webcryptoRoutineArgs).then(Bufferize).catch(function useJScrypto(er){
+      ////console.log("BROWSER FAILED",er, routineArgs);
+      return (typeof JS[routine] === "function") ? JS[routine].apply(JS[routine],jsRoutineArgs)
                                                  : Promise.reject("unsupported operation");
     });
   }
