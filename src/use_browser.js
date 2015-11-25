@@ -10,7 +10,7 @@ function tryBrowser (routine, arguments){
             // might fail - in which case we need the JS-equivalent. Therefore, we're adding this here.
             return Promise.all([result, importKey.apply(importKey, tryBrowserArguments)])
             .then(function (results) {
-                resolve({webcryptoKey: result[0], jsKey: result[1]});
+                resolve({webcryptoKey: results[0], jsKey: results[1]});
             })
             .catch(reject);
         } else {
