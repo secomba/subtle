@@ -44,7 +44,7 @@ function makeRoutine(routine){
         return it.jsKey ? it.jsKey : it;
     });
 
-    return Browser(routine, webcryptoRoutineArgs).then(Bufferize).catch(function useJScrypto(er){
+    return Browser(routine, webcryptoRoutineArgs, jsRoutineArgs).then(Bufferize).catch(function useJScrypto(er){
       ////console.log("BROWSER FAILED",er, routineArgs);
       return (typeof JS[routine] === "function") ? JS[routine].apply(JS[routine],jsRoutineArgs)
                                                  : Promise.reject("unsupported operation");
