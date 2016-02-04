@@ -23,12 +23,13 @@
   "license": "MIT",
   "dependencies": {
     "ecc-jsbn": "0.0.1",
-    "node-forge": "^0.6.38",
-    "polyfill-promise": "^4.0.1",
-    "sjcl": "^1.0.3",
-    "jshashes": "^1.0.5",
-    "pbkdf2-sha256": "^1.1.1",
-    "pbkdf2-sha512": "^1.1.0"
+    "node-forge": "~0.6.38",
+    "polyfill-promise": "~4.0.1",
+    "sjcl": "~1.0.3",
+    "jshashes": "~1.0.5",
+    "pbkdf2-sha256": "~1.1.1",
+    "pbkdf2-sha512": "~1.1.0",
+    "asn1.js": "~4.3.1"
   },
   "devDependencies": {
     "chext": "0.0.1",
