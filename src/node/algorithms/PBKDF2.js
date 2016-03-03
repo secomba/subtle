@@ -46,7 +46,7 @@ var PBKDF2 = {
         });
     },
 
-    _combineBufferAndInteger(buffer, integer) {
+    _combineBufferAndInteger: function(buffer, integer) {
         var result = new Buffer(buffer.length + 4);
         for (var i = 0; i < buffer.length; i++) {
             result[i] = buffer[i];
@@ -58,7 +58,7 @@ var PBKDF2 = {
         return result;
     },
 
-    _F_partial_with_timeout(keyString, count, u, method) {
+    _F_partial_with_timeout: function(keyString, count, u, method) {
         return new Promise(function(resolve) {
             var result = new Buffer({'sha256': 32, 'sha512': 64}[method]).fill(0);
             for (var i = 0; i < count; i++) {
@@ -78,7 +78,7 @@ var PBKDF2 = {
         });
     },
 
-    _F(keyString, salt, iterations, index, method) {
+    _F: function(keyString, salt, iterations, index, method) {
         var result = new Buffer({'sha256': 32, 'sha512': 64}[method]).fill(0);
         var u = PBKDF2._combineBufferAndInteger(salt, index);
 
@@ -105,7 +105,7 @@ var PBKDF2 = {
         });
     },
 
-    pbkdf2(keyString, salt, iterations, length, method) {
+    pbkdf2: function(keyString, salt, iterations, length, method) {
         var result = new Buffer(length);
 
         function continueAtOffset(offset, index) {
