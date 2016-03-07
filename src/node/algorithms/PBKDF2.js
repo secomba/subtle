@@ -36,7 +36,15 @@ var PBKDF2 = {
         var method = {"SHA-512": "sha512", "SHA-256": "sha256"}[options.hash.name];
 
         var salt = new Buffer(options.salt);
-        return PBKDF2.pbkdf2(key, salt, options.iterations, length / 8, method)
+        var pbkdf2CreatorPromise = null;
+        // if a custom PBKDF2 method is installed, use this one.
+        if (window.PBKDF2 && window.PBKDF2.generate) {
+            pbkdf2CreatorPromise = window.PBKDF2.generate(key, salt, options.iterations, length / 8, method);
+        } else {
+            // otherwise fallback to slow own implementation
+            pbkdf2CreatorPromise = PBKDF2.pbkdf2(key, salt, options.iterations, length / 8, method);
+        }
+        return pbkdf2CreatorPromise
         .then(function(result) {
             var nativeResult = new Uint8Array(result.length);
             for (var i = 0; i < result.length; i++) {
